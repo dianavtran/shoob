@@ -1,3 +1,9 @@
+//mobile browser detect
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    $('.mobileBrowser').css('display','flex');
+}
+
+
 // start screen text animation
 
 var text = document.getElementById("text");
@@ -466,13 +472,13 @@ function epilogue(ending) {
       endingWeather = true;
       activeEnding = "weather";
       $('.jobTitleText').html('Weather doggo');
-      $('.jobBodyText').html('Walking into the WTHR station with a perfect toy like that? Of course you got the jorb. Every day you report a 5 day forcast of sunny skies. You’re not always right but it’s good.  \<br> Also Bront burns easily and hates the sun.');
+      $('.jobBodyText').html('Walking into the WTHR station with a perfect toy like that? Of course you got the jorb. Every day you report a 5 day forecast of sunny skies. You’re not always right but it’s good.  \<br> Also Bront burns easily and hates the sun.');
       break;
     case "stream":
       endingStream = true;
       activeEnding = "stream";
       $('.jobTitleText').html('Internet famous');
-      $('.jobBodyText').html('Wow. Turns out that email wasn’t a scam and you really did get super rich and famous. People love you even though you\'re not very good at Tetris. \<br> Bront follows you on Twitter now. You don’t follow back.');
+      $('.jobBodyText').html('Wow. Turns out that email wasn’t a scam and you really did get super rich and famous. People love you even though you\'re not very good at Tetris. Bront follows you on Twitter now. You don’t follow back.');
       break;
     case "evicted":
       endingEvicted = true;
@@ -503,6 +509,10 @@ function playAgain() {
     $('.gameScreen').removeClass('shoobAnimIn');
     $('.paper').removeClass('paperActive');
     $('.gameScreen').hide();
+    $('.shoobAwake').css({
+      'background': 'url(img/shoob_awake.jpg) center center no-repeat',
+      'background-size': 'cover'
+    });
     $('.mayorMedal').removeClass('medalActive');
     $('.weatherMedal').removeClass('medalActive');
     $('.streamerMedal').removeClass('medalActive');
